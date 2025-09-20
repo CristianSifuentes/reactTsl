@@ -67,3 +67,7 @@ export default defineConfig([
   },
 ])
 ```
+
+npm install tailwindcss @tailwindcss/vite
+@import "tailwindcss";
+https://ui.shadcn.com/docs/installation/vite
