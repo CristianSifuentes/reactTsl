@@ -67,7 +67,14 @@ export default defineConfig([
   },
 ])
 ```
-
+https://ui.shadcn.com/
 npm install tailwindcss @tailwindcss/vite
 @import "tailwindcss";
 https://ui.shadcn.com/docs/installation/vite
+https://fonts.google.com/selection/embed
+
+https://github.com/DevTalles-corp/threads-of-tesla-style
+
+
+https://lovable.dev/projects/6c0ef6da-0548-4706-8037-9fd46a9b38c8
+https://github.com/DevTalles-corp/threads-of-tesla-style
