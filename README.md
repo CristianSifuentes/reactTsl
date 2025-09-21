@@ -85,3 +85,12 @@ http://localhost:5173/?viewMode=grid&page=7&sizes=xs,l,xl
 https://github.com/Klerith/bolt-admin-dashboard
 https://bolt.new/
 https://ui.shadcn.com/docs/components/table
+
+
+# TesloShop
+
+1. Clone the repository
+2. Clone the .env.template file and rename it to .env
+3. Run the `npm install` command to install the dependencies
+4. Verify that the backend is running on port 3000
+5. Run the `npm run dev` command to start the development server
