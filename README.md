@@ -80,3 +80,7 @@ https://lovable.dev/projects/6c0ef6da-0548-4706-8037-9fd46a9b38c8
 https://github.com/DevTalles-corp/threads-of-tesla-style
 
 http://localhost:5173/?viewMode=grid&page=7&sizes=xs,l,xl
+
+
+https://github.com/Klerith/bolt-admin-dashboard
+https://bolt.new/
