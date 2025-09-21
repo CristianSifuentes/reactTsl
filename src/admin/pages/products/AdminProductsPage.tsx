@@ -25,7 +25,7 @@ export const AdminProductsPage = () => {
           <Link to="/admin/products/new">
             <Button>
               <PlusIcon />
-              Nuevo producto
+              New Product
             </Button>
           </Link>
         </div>
@@ -35,13 +35,13 @@ export const AdminProductsPage = () => {
         <TableHeader>
           <TableRow>
             <TableHead className="w-[100px]">ID</TableHead>
-            <TableHead>Imagen</TableHead>
-            <TableHead>Nombre</TableHead>
-            <TableHead>Precio</TableHead>
-            <TableHead>Categoría</TableHead>
-            <TableHead>Inventario</TableHead>
-            <TableHead>Tallas</TableHead>
-            <TableHead className="text-right">Acciones</TableHead>
+            <TableHead>Image</TableHead>
+            <TableHead>Name</TableHead>
+            <TableHead>Price</TableHead>
+            <TableHead>Category</TableHead>
+            <TableHead>Inventory</TableHead>
+            <TableHead>Sizes</TableHead>
+            <TableHead className="text-right">Actions</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -54,14 +54,14 @@ export const AdminProductsPage = () => {
                 className="w-20 h-20 object-cover rounded-md"
               />
             </TableCell>
-            <TableCell>Producto 1</TableCell>
+            <TableCell>Product 1</TableCell>
             <TableCell>$250.00</TableCell>
-            <TableCell>Categoría 1</TableCell>
+            <TableCell>Category 1</TableCell>
             <TableCell>100 stock</TableCell>
             <TableCell>XS,S,L</TableCell>
             <TableCell className="text-right">
-              {/* <Link to={`t-shirt-teslo`}>Editar</Link> */}
-              <Link to={`/admin/products/t-shirt-teslo`}>Editar</Link>
+              {/* <Link to={`t-shirt-teslo`}>Edit</Link> */}
+              <Link to={`/admin/products/t-shirt-teslo`}>Edit</Link>
             </TableCell>
           </TableRow>
         </TableBody>

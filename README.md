@@ -84,3 +84,4 @@ http://localhost:5173/?viewMode=grid&page=7&sizes=xs,l,xl
 
 https://github.com/Klerith/bolt-admin-dashboard
 https://bolt.new/
+https://ui.shadcn.com/docs/components/table

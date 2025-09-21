@@ -122,13 +122,13 @@ export const AdminProductPage = () => {
           <Button variant="outline">
             <Link to="/admin/products" className="flex items-center gap-2">
               <X className="w-4 h-4" />
-              Cancelar
+              Cancel
             </Link>
           </Button>
 
           <Button>
             <SaveAll className="w-4 h-4" />
-            Guardar cambios
+            Save changes
           </Button>
         </div>
       </div>
@@ -140,13 +140,13 @@ export const AdminProductPage = () => {
             {/* Basic Information */}
             <div className="bg-white rounded-xl shadow-lg border border-slate-200 p-6">
               <h2 className="text-xl font-semibold text-slate-800 mb-6">
-                Información del producto
+                Product information
               </h2>
 
               <div className="space-y-6">
                 <div>
                   <label className="block text-sm font-medium text-slate-700 mb-2">
-                    Título del producto
+                    Product Title Information
                   </label>
                   <input
                     type="text"
@@ -175,7 +175,7 @@ export const AdminProductPage = () => {
 
                   <div>
                     <label className="block text-sm font-medium text-slate-700 mb-2">
-                      Stock del producto
+                      Product stock
                     </label>
                     <input
                       type="number"
@@ -191,7 +191,7 @@ export const AdminProductPage = () => {
 
                 <div>
                   <label className="block text-sm font-medium text-slate-700 mb-2">
-                    Slug del producto
+                    Product slug
                   </label>
                   <input
                     type="text"
@@ -204,7 +204,7 @@ export const AdminProductPage = () => {
 
                 <div>
                   <label className="block text-sm font-medium text-slate-700 mb-2">
-                    Género del producto
+                    Product gender
                   </label>
                   <select
                     value={product.gender}
@@ -222,7 +222,7 @@ export const AdminProductPage = () => {
 
                 <div>
                   <label className="block text-sm font-medium text-slate-700 mb-2">
-                    Descripción del producto
+                    Product description
                   </label>
                   <textarea
                     value={product.description}
@@ -240,7 +240,7 @@ export const AdminProductPage = () => {
             {/* Sizes */}
             <div className="bg-white rounded-xl shadow-lg border border-slate-200 p-6">
               <h2 className="text-xl font-semibold text-slate-800 mb-6">
-                Tallas disponibles
+                Available sizes
               </h2>
 
               <div className="space-y-4">
@@ -263,7 +263,7 @@ export const AdminProductPage = () => {
 
                 <div className="flex flex-wrap gap-2 pt-2 border-t border-slate-200">
                   <span className="text-sm text-slate-600 mr-2">
-                    Añadir tallas:
+                    Add sizes:
                   </span>
                   {availableSizes.map((size) => (
                     <button
@@ -286,7 +286,7 @@ export const AdminProductPage = () => {
             {/* Tags */}
             <div className="bg-white rounded-xl shadow-lg border border-slate-200 p-6">
               <h2 className="text-xl font-semibold text-slate-800 mb-6">
-                Etiquetas
+                Tags
               </h2>
 
               <div className="space-y-4">
@@ -330,7 +330,7 @@ export const AdminProductPage = () => {
             {/* Product Images */}
             <div className="bg-white rounded-xl shadow-lg border border-slate-200 p-6">
               <h2 className="text-xl font-semibold text-slate-800 mb-6">
-                Imágenes del producto
+                Product Images
               </h2>
 
               {/* Drag & Drop Zone */}
@@ -356,14 +356,14 @@ export const AdminProductPage = () => {
                   <Upload className="mx-auto h-12 w-12 text-slate-400" />
                   <div>
                     <p className="text-lg font-medium text-slate-700">
-                      Arrastra las imágenes aquí
+                      Drag and drop images here
                     </p>
                     <p className="text-sm text-slate-500">
-                      o haz clic para buscar
+                      or click to browse
                     </p>
                   </div>
                   <p className="text-xs text-slate-400">
-                    PNG, JPG, WebP hasta 10MB cada una
+                    PNG, JPG, WebP up to 10MB each
                   </p>
                 </div>
               </div>
@@ -371,7 +371,7 @@ export const AdminProductPage = () => {
               {/* Current Images */}
               <div className="mt-6 space-y-3">
                 <h3 className="text-sm font-medium text-slate-700">
-                  Imágenes actuales
+                  Current Images
                 </h3>
                 <div className="grid grid-cols-2 gap-3">
                   {product.images.map((image, index) => (
@@ -398,22 +398,22 @@ export const AdminProductPage = () => {
             {/* Product Status */}
             <div className="bg-white rounded-xl shadow-lg border border-slate-200 p-6">
               <h2 className="text-xl font-semibold text-slate-800 mb-6">
-                Estado del producto
+                Product Status
               </h2>
 
               <div className="space-y-4">
                 <div className="flex items-center justify-between p-3 bg-slate-50 rounded-lg">
                   <span className="text-sm font-medium text-slate-700">
-                    Estado
+                    Status
                   </span>
                   <span className="px-2 py-1 text-xs font-medium bg-green-100 text-green-800 rounded-full">
-                    Activo
+                    Active
                   </span>
                 </div>
 
                 <div className="flex items-center justify-between p-3 bg-slate-50 rounded-lg">
                   <span className="text-sm font-medium text-slate-700">
-                    Inventario
+                    Inventory
                   </span>
                   <span
                     className={`px-2 py-1 text-xs font-medium rounded-full ${
@@ -434,19 +434,19 @@ export const AdminProductPage = () => {
 
                 <div className="flex items-center justify-between p-3 bg-slate-50 rounded-lg">
                   <span className="text-sm font-medium text-slate-700">
-                    Imágenes
+                    Current Images
                   </span>
                   <span className="text-sm text-slate-600">
-                    {product.images.length} imágenes
+                    {product.images.length} images
                   </span>
                 </div>
 
                 <div className="flex items-center justify-between p-3 bg-slate-50 rounded-lg">
                   <span className="text-sm font-medium text-slate-700">
-                    Tallas disponibles
+                    Available Sizes
                   </span>
                   <span className="text-sm text-slate-600">
-                    {product.sizes.length} tallas
+                    {product.sizes.length} sizes
                   </span>
                 </div>
               </div>
