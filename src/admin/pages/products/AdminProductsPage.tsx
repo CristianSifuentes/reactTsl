@@ -55,7 +55,7 @@ export const AdminProductsPage = () => {
         </TableHeader>
         <TableBody>
           {data!.products.map((product) => (
-            <TableRow>
+            <TableRow key={product.id}>
               <TableCell>
                 <img
                   src={product.images[0]}
@@ -74,7 +74,7 @@ export const AdminProductsPage = () => {
               <TableCell>{currencyFormatter(product.price)}</TableCell>
               <TableCell>{product.gender}</TableCell>
               <TableCell>{product.stock} stock</TableCell>
-              <TableCell>{product.sizes}</TableCell>
+              <TableCell>{product.sizes.join(', ')}</TableCell>
               <TableCell className="text-right">
                 {/* <Link to={`t-shirt-teslo`}>Editar</Link> */}
                 <Link to={`/admin/products/${product.id}`}>
