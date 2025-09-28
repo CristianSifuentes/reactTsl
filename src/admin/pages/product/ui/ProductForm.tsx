@@ -10,6 +10,8 @@ import type { Product, Size } from '@/interfaces/product.interface';
 import { X, SaveAll, Tag, Plus, Upload } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
+// Props for the component  
+// Methods
 interface Props {
   title: string;
   subTitle: string;
@@ -29,7 +31,9 @@ export const ProductForm = ({
   onSubmit,
   isPending,
 }: Props) => {
+
   const [dragActive, setDragActive] = useState(false);
+
   const {
     register,
     handleSubmit,
@@ -105,13 +109,13 @@ export const ProductForm = ({
           <Button variant="outline" type="button">
             <Link to="/admin/products" className="flex items-center gap-2">
               <X className="w-4 h-4" />
-              Cancelar
+              Cancel
             </Link>
           </Button>
 
           <Button type="submit" disabled={isPending}>
             <SaveAll className="w-4 h-4" />
-            Guardar cambios
+            Save changes
           </Button>
         </div>
       </div>
@@ -123,30 +127,31 @@ export const ProductForm = ({
             {/* Basic Information */}
             <div className="bg-white rounded-xl shadow-lg border border-slate-200 p-6">
               <h2 className="text-xl font-semibold text-slate-800 mb-6">
-                Información del producto
+                Product information
               </h2>
 
               <div className="space-y-6">
                 <div>
                   <label className="block text-sm font-medium text-slate-700 mb-2">
-                    Título del producto
+                    Product Title
                   </label>
                   <input
                     type="text"
                     {...register('title', {
                       required: true,
                     })}
+                    
                     className={cn(
                       'w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200',
                       {
                         'border-red-500': errors.title,
                       }
                     )}
-                    placeholder="Título del producto"
+                    placeholder="Product Title"
                   />
                   {errors.title && (
                     <p className="text-red-500 text-sm">
-                      El título es requerido
+                      Title is required
                     </p>
                   )}
                 </div>
@@ -154,7 +159,7 @@ export const ProductForm = ({
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-medium text-slate-700 mb-2">
-                      Precio ($)
+                      Price ($)
                     </label>
                     <input
                       type="number"
@@ -168,18 +173,18 @@ export const ProductForm = ({
                           'border-red-500': errors.price,
                         }
                       )}
-                      placeholder="Precio del producto"
+                      placeholder="Product Price"
                     />
                     {errors.price && (
                       <p className="text-red-500 text-sm">
-                        El precio debe de ser mayor a 0
+                        Price must be greater than 0
                       </p>
                     )}
                   </div>
 
                   <div>
                     <label className="block text-sm font-medium text-slate-700 mb-2">
-                      Stock del producto
+                      Product Stock
                     </label>
                     <input
                       type="number"
@@ -193,11 +198,11 @@ export const ProductForm = ({
                           'border-red-500': errors.stock,
                         }
                       )}
-                      placeholder="Stock del producto"
+                      placeholder="Product Stock"
                     />
                     {errors.stock && (
                       <p className="text-red-500 text-sm">
-                        El inventario debe de ser mayor a 0
+                        Stock must be greater than 0
                       </p>
                     )}
                   </div>
@@ -205,7 +210,7 @@ export const ProductForm = ({
 
                 <div>
                   <label className="block text-sm font-medium text-slate-700 mb-2">
-                    Slug del producto
+                    Product slug
                   </label>
                   <input
                     type="text"
@@ -213,7 +218,7 @@ export const ProductForm = ({
                       required: true,
                       validate: (value) =>
                         !/\s/.test(value) ||
-                        'El slug no puede contener espacios en blanco',
+                        'The slug cannot contain spaces',
                     })}
                     className={cn(
                       'w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200',
@@ -221,18 +226,18 @@ export const ProductForm = ({
                         'border-red-500': errors.slug,
                       }
                     )}
-                    placeholder="Slug del producto"
+                    placeholder="Product slug"
                   />
                   {errors.slug && (
                     <p className="text-red-500 text-sm">
-                      {errors.slug.message || 'El slug es requerido.'}
+                      {errors.slug.message || 'The slug is required.'}
                     </p>
                   )}
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-slate-700 mb-2">
-                    Género del producto
+                    Product Gender
                   </label>
                   <select
                     {...register('gender')}
@@ -242,16 +247,16 @@ export const ProductForm = ({
                     // }
                     className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
                   >
-                    <option value="men">Hombre</option>
-                    <option value="women">Mujer</option>
+                    <option value="men">Men</option>
+                    <option value="women">Women</option>
                     <option value="unisex">Unisex</option>
-                    <option value="kids">Niño</option>
+                    <option value="kids">Kids</option>
                   </select>
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-slate-700 mb-2">
-                    Descripción del producto
+                    Product Description
                   </label>
                   <textarea
                     {...register('description', { required: true })}
@@ -262,11 +267,11 @@ export const ProductForm = ({
                         'border-red-500': errors.description,
                       }
                     )}
-                    placeholder="Descripción del producto"
+                    placeholder="Product description"
                   />
                   {errors.description && (
                     <p className="text-red-500 text-sm">
-                      {'La descripción es requerida.'}
+                      {'The description is required.'}
                     </p>
                   )}
                 </div>
@@ -276,7 +281,7 @@ export const ProductForm = ({
             {/* Sizes */}
             <div className="bg-white rounded-xl shadow-lg border border-slate-200 p-6">
               <h2 className="text-xl font-semibold text-slate-800 mb-6">
-                Tallas disponibles
+                Available sizes
               </h2>
 
               <div className="space-y-4">
@@ -304,7 +309,7 @@ export const ProductForm = ({
 
                 <div className="flex flex-wrap gap-2 pt-2 border-t border-slate-200">
                   <span className="text-sm text-slate-600 mr-2">
-                    Añadir tallas:
+                    Add sizes:
                   </span>
                   {availableSizes.map((size) => (
                     <button
@@ -328,7 +333,7 @@ export const ProductForm = ({
             {/* Tags */}
             <div className="bg-white rounded-xl shadow-lg border border-slate-200 p-6">
               <h2 className="text-xl font-semibold text-slate-800 mb-6">
-                Etiquetas
+                Tags
               </h2>
 
               <div className="space-y-4">
@@ -361,7 +366,7 @@ export const ProductForm = ({
                         labelInputRef.current!.value = '';
                       }
                     }}
-                    placeholder="Añadir nueva etiqueta..."
+                    placeholder="Add new tag..."
                     className="flex-1 px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
                   />
                   <Button onClick={addTag} className="px-4 py-2rounded-lg ">
@@ -377,7 +382,7 @@ export const ProductForm = ({
             {/* Product Images */}
             <div className="bg-white rounded-xl shadow-lg border border-slate-200 p-6">
               <h2 className="text-xl font-semibold text-slate-800 mb-6">
-                Imágenes del producto
+                Product Images
               </h2>
 
               {/* Drag & Drop Zone */}
@@ -403,14 +408,14 @@ export const ProductForm = ({
                   <Upload className="mx-auto h-12 w-12 text-slate-400" />
                   <div>
                     <p className="text-lg font-medium text-slate-700">
-                      Arrastra las imágenes aquí
+                      Drag and drop images here
                     </p>
                     <p className="text-sm text-slate-500">
-                      o haz clic para buscar
+                      or click to browse
                     </p>
                   </div>
                   <p className="text-xs text-slate-400">
-                    PNG, JPG, WebP hasta 10MB cada una
+                    PNG, JPG, WebP up to 10MB each
                   </p>
                 </div>
               </div>
@@ -418,7 +423,7 @@ export const ProductForm = ({
               {/* Current Images */}
               <div className="mt-6 space-y-3">
                 <h3 className="text-sm font-medium text-slate-700">
-                  Imágenes actuales
+                  Current Images
                 </h3>
                 <div className="grid grid-cols-2 gap-3">
                   {product.images.map((image, index) => (
@@ -445,22 +450,22 @@ export const ProductForm = ({
             {/* Product Status */}
             <div className="bg-white rounded-xl shadow-lg border border-slate-200 p-6">
               <h2 className="text-xl font-semibold text-slate-800 mb-6">
-                Estado del producto
+                Product Status
               </h2>
 
               <div className="space-y-4">
                 <div className="flex items-center justify-between p-3 bg-slate-50 rounded-lg">
                   <span className="text-sm font-medium text-slate-700">
-                    Estado
+                    Status
                   </span>
                   <span className="px-2 py-1 text-xs font-medium bg-green-100 text-green-800 rounded-full">
-                    Activo
+                    Active
                   </span>
                 </div>
 
                 <div className="flex items-center justify-between p-3 bg-slate-50 rounded-lg">
                   <span className="text-sm font-medium text-slate-700">
-                    Inventario
+                    Inventory
                   </span>
                   <span
                     className={`px-2 py-1 text-xs font-medium rounded-full ${
@@ -481,19 +486,19 @@ export const ProductForm = ({
 
                 <div className="flex items-center justify-between p-3 bg-slate-50 rounded-lg">
                   <span className="text-sm font-medium text-slate-700">
-                    Imágenes
+                    Current Images
                   </span>
                   <span className="text-sm text-slate-600">
-                    {product.images.length} imágenes
+                    {product.images.length} images
                   </span>
                 </div>
 
                 <div className="flex items-center justify-between p-3 bg-slate-50 rounded-lg">
                   <span className="text-sm font-medium text-slate-700">
-                    Tallas disponibles
+                    Available Sizes
                   </span>
                   <span className="text-sm text-slate-600">
-                    {selectedSizes.length} tallas
+                    {selectedSizes.length} sizes
                   </span>
                 </div>
               </div>

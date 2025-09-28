@@ -26,8 +26,8 @@ export const AdminProductsPage = () => {
     <>
       <div className="flex justify-between items-center">
         <AdminTitle
-          title="Productos"
-          subtitle="Aquí puedes ver y administrar tus productos"
+          title="Products"
+          subtitle="Here you can manage all your products."
         />
 
         <div className="flex justify-end mb-10 gap-4">

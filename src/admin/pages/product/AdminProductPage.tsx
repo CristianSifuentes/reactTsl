@@ -13,23 +13,23 @@ export const AdminProductPage = () => {
 
   const { isLoading, isError, data: product, mutation } = useProduct(id || '');
 
-  const title = id === 'new' ? 'Nuevo producto' : 'Editar producto';
+  const title = id === 'new' ? 'New product' : 'Edit product';
   const subtitle =
     id === 'new'
-      ? 'Aquí puedes crear un nuevo producto.'
-      : 'Aquí puedes editar el producto.';
+      ? 'Here you can create a new product.'
+      : 'Here you can edit the product.';
 
   const handleSubmit = async (productLike: Partial<Product>) => {
     await mutation.mutateAsync(productLike, {
       onSuccess: (data) => {
-        toast.success('Producto actualizado correctamente', {
+        toast.success('Product updated successfully', {
           position: 'top-right',
         });
         navigate(`/admin/products/${data.id}`);
       },
       onError: (error) => {
         console.log(error);
-        toast.error('Error al actualizar el producto');
+        toast.error('Error updating product');
       },
     });
   };
