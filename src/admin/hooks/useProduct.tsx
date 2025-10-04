@@ -15,8 +15,12 @@ export const useProduct = (id: string) => {
   });
 
   const mutation = useMutation({
+    // function is call when you call mutate or mutateAsync (mutation function)
     mutationFn: createUpdateProductAction,
     onSuccess: (product: Product) => {
+      // this function is called when you all is success
+      // return result of promise
+      console.log({ product });
       // Invalidar caché
       queryClient.invalidateQueries({ queryKey: ['products'] });
       queryClient.invalidateQueries({
@@ -26,8 +30,20 @@ export const useProduct = (id: string) => {
       // Actualizar queryData
       queryClient.setQueryData(['products', { id: product.id }], product);
     },
+    onError: (error) => {
+      console.log({ error });
+    },
+    onSettled: () => {
+      console.log('Mutation finalizada' );
+    },
+    onMutate: (newProduct) => {
+      console.log({ newProduct });
+      // return { previousProduct: queryClient.getQueryData(['product', { id: newProduct.id }]) }
+    }
   });
 
+
+  // mutation.mutate
   // const handleSubmitForm = async (productLike: Partial<Product>) => {
   //   console.log({ productLike });
   // };
